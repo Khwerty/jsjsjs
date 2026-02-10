@@ -3,8 +3,8 @@ const PORT = 54222;
 const server = dgram.createSocket('udp4');
 
 server.on('message', (msg, rinfo) => {
-    console.log(`Paquete de ${rinfo.address}:${rinfo.port} ${msg.length} bytes`);
-    console.log([...msg]);
+    console.log(`Paquete de caballo_minero ${msg.length} bytes`);
+    console.log(msg.toString('utf8'));
     console.log('-------------------------------');
 });
 
