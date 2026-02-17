@@ -27,6 +27,7 @@ function parse_buffer(msg) {
 };
 
 server.on("message", (msg, rinfo) => {
+	console.log("REE")
 	parse_buffer(msg);
 });
 
