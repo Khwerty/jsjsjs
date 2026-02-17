@@ -3,6 +3,7 @@ const PORT = 54222;
 const server = dgram.createSocket('udp4');
 
 lobbys={};
+lobbys_rinfo={};
 
 function parse_buffer(msg,rinfo) {
 	let offset = 0;
@@ -28,7 +29,7 @@ function parse_buffer(msg,rinfo) {
 	if (!(id in lobbys)) {
     console.log("New Lobby Added >>> "+lobby_name);
 
-		lobbts_rinfo[id] = {
+		lobbys_rinfo[id] = {
 			address: rinfo.address,
 			port: rinfo.port,
 		};
