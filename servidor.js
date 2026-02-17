@@ -23,7 +23,7 @@ server.on("message", (msg, rinfo) => {
     let public = msg.readUInt8(offset);
     offset += 1;
 
-    console.log(lobby_name+" #"+id+" ( "+players+" / "+max_players);
+    console.log(lobby_name+" #"+id+" ( "+players+" / "+max_players+" )");
 });
 
 server.bind(PORT, () => {
