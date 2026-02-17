@@ -2,7 +2,7 @@ const dgram = require('dgram');
 const PORT = 54222;
 const server = dgram.createSocket('udp4');
 
-server.on("message", (msg, rinfo) => {
+function parse_buffer{
     let offset = 0;
 
     let len =  msg.readUInt8(offset);
@@ -19,9 +19,15 @@ server.on("message", (msg, rinfo) => {
 
     let max_players = msg.readUInt8(offset);
     offset += 1;
-    
+
     let public = msg.readUInt8(offset);
     offset += 1;
+        
+}
+
+
+server.on("message", (msg, rinfo) => {
+    
 
     console.log(lobby_name+" #"+id+" ( "+players+" / "+max_players+" )");
 });
