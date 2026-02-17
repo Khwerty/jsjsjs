@@ -72,3 +72,9 @@ server.on("message", (msg, rinfo) => {
 server.bind(PORT, () => {
 	console.log(`I NEED MORE THAN ${PORT} MARES`);
 });
+
+process.on("SIGINT", () => {
+  server.close(() => {
+    process.exit(0);
+  });
+});
