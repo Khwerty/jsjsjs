@@ -26,8 +26,10 @@ function parse_buffer(msg) {
 	console.log(lobby_name + " #" + id + " ( " + players + " / " + max_players + " )");
 };
 
+console.log("RAA");
+
 server.on("message", (msg, rinfo) => {
-	console.log("REE")
+	console.log("REE");
 	parse_buffer(msg);
 });
 
