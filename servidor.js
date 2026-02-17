@@ -22,7 +22,7 @@ function parse_buffer(msg) {
 
 	let public = msg.readUInt8(offset);
 	offset += 1;
-
+ 
 	console.log(lobby_name + " #" + id + " ( " + players + " / " + max_players + " )");
 }
 
