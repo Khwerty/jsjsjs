@@ -51,9 +51,10 @@ function parse_buffer(msg,rinfo) {
 };
 function parse_lobbys_info(rinfo){
 
-	console.log("Sending lobbys")
-
 	const buffer = Buffer.from(JSON.stringify(lobbys));
+
+	console.log("Sending to "+rinfo.address+":"+rinfo.port);
+	console.log(buffer);
 
 	server.send(buffer, rinfo.port, rinfo.address, (err) => {
   	if (err) console.error(err);
