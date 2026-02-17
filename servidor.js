@@ -2,11 +2,18 @@ const dgram = require('dgram');
 const PORT = 54222;
 const server = dgram.createSocket('udp4');
 
+const packet_type = Object.freeze(
+{ 
+  LOBBY_CREATION:0,
+  LOBBYS_REQUEST:1,
+  LOBBY_REQUEST_CONNECTION:2
+});
+
 lobbys={};
 lobbys_rinfo={};
 
 function parse_buffer(msg,rinfo) {
-	let offset = 0;
+	let offset = 1;
 
 	let len = msg.readUInt8(offset);
 	offset += 1;
@@ -48,7 +55,18 @@ server.on("error", (err) => {
 });
 
 server.on("message", (msg, rinfo) => {
-	parse_buffer(msg,rinfo);
+	let type = msg.readUInt8( 0 )
+
+	switch(type){
+		case packet_type.LOBBY_CREATION:
+			console.log("PACKET DATA FROM LOBBY")
+			parse_buffer(msg,rinfo);
+			break;
+		case packet_type.LOBBYS_REQUEST:
+			break;
+		case packet_type.LOBBY_REQUEST_CONNECTION:
+			break;
+	}
 });
 
 server.bind(PORT, () => {
