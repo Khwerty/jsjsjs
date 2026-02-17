@@ -55,14 +55,14 @@ server.on("error", (err) => {
 });
 
 server.on("message", (msg, rinfo) => {
-	let type = msg.readUInt8( 0 )
+	let type = msg.readUInt8( 0 );
 
 	switch(type){
 		case packet_type.LOBBY_CREATION:
-			console.log("PACKET DATA FROM LOBBY")
 			parse_buffer(msg,rinfo);
 			break;
 		case packet_type.LOBBYS_REQUEST:
+			console.log("REQUESTED");
 			break;
 		case packet_type.LOBBY_REQUEST_CONNECTION:
 			break;
