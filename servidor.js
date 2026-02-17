@@ -28,6 +28,10 @@ function parse_buffer(msg) {
 
 console.log("RAA");
 
+server.on("error", (err) => {
+    console.error("SERVER ERROR:", err);
+});
+
 server.on("message", (msg, rinfo) => {
 	console.log("REE");
 	//parse_buffer(msg);
