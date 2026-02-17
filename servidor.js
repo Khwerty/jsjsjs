@@ -2,7 +2,7 @@ const dgram = require('dgram');
 const PORT = 54222;
 const server = dgram.createSocket('udp4');
 
-function parse_buffer{
+function parse_buffer(){
     let offset = 0;
 
     let len =  msg.readUInt8(offset);
@@ -22,7 +22,7 @@ function parse_buffer{
 
     let public = msg.readUInt8(offset);
     offset += 1;
-        
+    
 }
 
 
