@@ -30,7 +30,7 @@ console.log("RAA");
 
 server.on("message", (msg, rinfo) => {
 	console.log("REE");
-	parse_buffer(msg);
+	//parse_buffer(msg);
 });
 
 server.bind(PORT, () => {
