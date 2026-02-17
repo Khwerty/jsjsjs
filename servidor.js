@@ -2,7 +2,9 @@ const dgram = require('dgram');
 const PORT = 54222;
 const server = dgram.createSocket('udp4');
 
-function parse_buffer(msg) {
+lobbys={};
+
+function parse_buffer(msg,rinfo) {
 	let offset = 0;
 
 	let len = msg.readUInt8(offset);
@@ -22,8 +24,22 @@ function parse_buffer(msg) {
 
 	let public = msg.readUInt8(offset);
 	offset += 1;
- 
-	console.log(lobby_name + " #" + id + " ( " + players + " / " + max_players + " )");
+
+	if (!(id in lobbys)) {
+    console.log("New Lobby Added >>> "+lobby_name);
+
+		lobbts_rinfo[id] = {
+			address: rinfo.address,
+			port: rinfo.port,
+		};
+
+		lobbys[id] = {
+				id,
+				lobby_name, 
+				players, max_players, 
+				public,
+		}
+	}
 };
 
 server.on("error", (err) => {
@@ -31,7 +47,7 @@ server.on("error", (err) => {
 });
 
 server.on("message", (msg, rinfo) => {
-	parse_buffer(msg);
+	parse_buffer(msg,rinfo);
 });
 
 server.bind(PORT, () => {
