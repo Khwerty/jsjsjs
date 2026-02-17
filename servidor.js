@@ -23,12 +23,11 @@ function parse_buffer(msg) {
 	let public = msg.readUInt8(offset);
 	offset += 1;
  
-	
 	console.log(lobby_name + " #" + id + " ( " + players + " / " + max_players + " )");
-}
+};
 
 server.on("message", (msg, rinfo) => {
-	parse_buffer(msg)	
+	parse_buffer(msg);
 });
 
 server.bind(PORT, () => {
