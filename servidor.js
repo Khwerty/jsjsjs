@@ -49,9 +49,19 @@ function parse_buffer(msg,rinfo) {
 		}
 	}
 };
+function parse_lobbys_info(rinfo){
+
+	console.log("Sending lobbys")
+	
+	const buffer = Buffer.from(JSON.stringify(lobbys));
+
+	socket.send(buffer, rinfo.port, rinfo.address, (err) => {
+  	if (err) console.error(err);
+	});
+}
 
 server.on("error", (err) => {
-    console.error("SERVER ERROR:", err);
+  console.error("SERVER ERROR:", err);
 });
 
 server.on("message", (msg, rinfo) => {
@@ -62,7 +72,7 @@ server.on("message", (msg, rinfo) => {
 			parse_buffer(msg,rinfo);
 			break;
 		case packet_type.LOBBYS_REQUEST:
-			console.log("REQUESTED");
+			parse_lobbys_info(rinfo);
 			break;
 		case packet_type.LOBBY_REQUEST_CONNECTION:
 			break;
