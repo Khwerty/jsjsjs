@@ -60,7 +60,7 @@ function parse_buffer(msg,rinfo) {
 };
 function parse_lobbys_info(rinfo){
 
-	const buffer = Buffer.from(JSON.stringify(lobbys));
+	const buffer = Buffer.from([1,JSON.stringify(lobbys)]);
 
 	console.log("Sending to "+rinfo.address+":"+rinfo.port);
 	console.log(buffer);
