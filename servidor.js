@@ -10,6 +10,15 @@ const packet_type = Object.freeze(
 });
 
 lobbys={};
+
+lobbys[222] = {
+	id:222,
+	lobby_name: "i love amres" ,
+	players:4,
+	max_players:8, 
+	public:1,
+}
+
 lobbys_rinfo={};
 
 function parse_buffer(msg,rinfo) {
