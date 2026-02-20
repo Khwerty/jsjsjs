@@ -60,10 +60,13 @@ function parse_buffer(msg,rinfo) {
 };
 function parse_lobbys_info(rinfo){
 
-	const buffer = Buffer.from([1,JSON.stringify(lobbys)]);
+	const jsonBuffer = Buffer.from(JSON.stringify(lobbys), "utf8");
+
+	const buffer = Buffer.alloc(1 + jsonBuffer.length);
+	buffer.writeUInt8(1, 0)
+	jsonBuffer.copy(buffer, 1);
 
 	console.log("Sending to "+rinfo.address+":"+rinfo.port);
-	console.log(buffer);
 
 	server.send(buffer, rinfo.port, rinfo.address, (err) => {
   	if (err) console.error(err);
