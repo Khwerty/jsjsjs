@@ -18,6 +18,27 @@ lobbys[222] = {
 	max_players:8, 
 	public:1,
 }
+lobbys[220] = {
+	id:222,
+	lobby_name: "i love amres" ,
+	players:4,
+	max_players:8, 
+	public:1,
+}
+lobbys[224] = {
+	id:222,
+	lobby_name: "i love amres" ,
+	players:4,
+	max_players:8, 
+	public:1,
+}
+lobbys[22] = {
+	id:222,
+	lobby_name: "i love amres" ,
+	players:4,
+	max_players:8, 
+	public:1,
+}
 
 lobbys_rinfo={};
 
