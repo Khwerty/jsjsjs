@@ -12,7 +12,7 @@ const packet_type = Object.freeze(
 lobbys={};
 
 lobbys[222] = {
-	id:222,
+	id:320,
 	lobby_name: "i love amres" ,
 	players:4,
 	max_players:8, 
@@ -26,14 +26,28 @@ lobbys[220] = {
 	public:1,
 }
 lobbys[224] = {
-	id:222,
+	id:208,
 	lobby_name: "i love amres" ,
 	players:4,
 	max_players:8, 
 	public:1,
 }
-lobbys[22] = {
-	id:222,
+lobbys[2] = {
+	id:220,
+	lobby_name: "i love amres" ,
+	players:4,
+	max_players:8, 
+	public:1,
+}
+lobbys[212] = {
+	id:33,
+	lobby_name: "i love amres" ,
+	players:4,
+	max_players:8, 
+	public:1,
+}
+lobbys[225] = {
+	id:58,
 	lobby_name: "i love amres" ,
 	players:4,
 	max_players:8, 
