@@ -13,43 +13,43 @@ lobbys={};
 
 lobbys[222] = {
 	id:320,
-	lobby_name: "i love amres" ,
+	lobby_name: "MARES I LOVE THEM <3" ,
 	players:4,
-	max_players:8, 
+	max_players:5, 
 	public:1,
 }
 lobbys[220] = {
 	id:222,
-	lobby_name: "i love amres" ,
-	players:4,
+	lobby_name: "IWANNAFUCKAHORSE" ,
+	players:6,
 	max_players:8, 
 	public:1,
 }
 lobbys[224] = {
 	id:208,
-	lobby_name: "i love amres" ,
-	players:4,
-	max_players:8, 
+	lobby_name: "PONIESAREHOT" ,
+	players:1,
+	max_players:2, 
 	public:1,
 }
 lobbys[2] = {
 	id:220,
-	lobby_name: "i love amres" ,
+	lobby_name: "MARELOVER" ,
 	players:4,
-	max_players:8, 
+	max_players:4, 
 	public:1,
 }
 lobbys[212] = {
 	id:33,
-	lobby_name: "i love amres" ,
-	players:4,
+	lobby_name: "MARES MARES MARES MARES MARES MARES MARES MARES MARES" ,
+	players:8,
 	max_players:8, 
 	public:1,
 }
 lobbys[225] = {
 	id:58,
-	lobby_name: "i love amres" ,
-	players:4,
+	lobby_name: "i love their scratchable ears their snowpity" ,
+	players:7,
 	max_players:8, 
 	public:1,
 }
